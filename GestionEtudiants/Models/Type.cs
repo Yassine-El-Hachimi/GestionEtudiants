@@ -16,6 +16,5 @@ namespace GestionEtudiants.Models
         [StringLenght(50)]
         public string valeur { get; set; }
 
-        public virtual ICollection<Type> types { get; set; }
     }
 }

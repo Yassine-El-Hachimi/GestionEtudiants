@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionEtudiants.Migrations
 {
     [DbContext(typeof(myContext))]
-    [Migration("20210614194413_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210625165038_FirstOne")]
+    partial class FirstOne
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -80,29 +80,122 @@ namespace GestionEtudiants.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("academie")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("annee")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("annee_bac")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("cin")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("code_promo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ddn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("delegation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("diplome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ecole")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("email")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("father_job")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("father_name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("filiere")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("firstname_ar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("firstname_fr")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("id_inscription")
                         .HasColumnType("int");
 
+                    b.Property<string>("lastname_ar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("lastname_fr")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ldn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("lycee")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("massar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("mention_bac")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("mother_job")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("mother_name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("natio")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("nom")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("parents_adress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("parents_phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("picture")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("prenom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("sexe")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("tel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("type_bac")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("validated")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ville_diplome")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("apogee");
@@ -155,13 +248,7 @@ namespace GestionEtudiants.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("Proffesseurid")
-                        .HasColumnType("int");
-
                     b.Property<int?>("id_professeur")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("id_type")
                         .HasColumnType("int");
 
                     b.Property<string>("nom")
@@ -170,9 +257,7 @@ namespace GestionEtudiants.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("Proffesseurid");
-
-                    b.HasIndex("id_type");
+                    b.HasIndex("id_professeur");
 
                     b.ToTable("Modules");
                 });
@@ -191,6 +276,9 @@ namespace GestionEtudiants.Migrations
                     b.Property<int?>("id_module")
                         .HasColumnType("int");
 
+                    b.Property<int?>("id_type")
+                        .HasColumnType("int");
+
                     b.Property<string>("semestre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -203,10 +291,12 @@ namespace GestionEtudiants.Migrations
 
                     b.HasIndex("id_module");
 
+                    b.HasIndex("id_type");
+
                     b.ToTable("Notes");
                 });
 
-            modelBuilder.Entity("GestionEtudiants.Models.Proffesseur", b =>
+            modelBuilder.Entity("GestionEtudiants.Models.Professeur", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -246,16 +336,11 @@ namespace GestionEtudiants.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("Typeid")
-                        .HasColumnType("int");
-
                     b.Property<string>("valeur")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
-
-                    b.HasIndex("Typeid");
 
                     b.ToTable("Types");
                 });
@@ -313,17 +398,11 @@ namespace GestionEtudiants.Migrations
 
             modelBuilder.Entity("GestionEtudiants.Models.Module", b =>
                 {
-                    b.HasOne("GestionEtudiants.Models.Proffesseur", "Proffesseur")
+                    b.HasOne("GestionEtudiants.Models.Professeur", "Professeur")
                         .WithMany("modules")
-                        .HasForeignKey("Proffesseurid");
+                        .HasForeignKey("id_professeur");
 
-                    b.HasOne("GestionEtudiants.Models.Type", "Type")
-                        .WithMany()
-                        .HasForeignKey("id_type");
-
-                    b.Navigation("Proffesseur");
-
-                    b.Navigation("Type");
+                    b.Navigation("Professeur");
                 });
 
             modelBuilder.Entity("GestionEtudiants.Models.Note", b =>
@@ -332,14 +411,13 @@ namespace GestionEtudiants.Migrations
                         .WithMany("notes")
                         .HasForeignKey("id_module");
 
-                    b.Navigation("Module");
-                });
+                    b.HasOne("GestionEtudiants.Models.Type", "Type")
+                        .WithMany()
+                        .HasForeignKey("id_type");
 
-            modelBuilder.Entity("GestionEtudiants.Models.Type", b =>
-                {
-                    b.HasOne("GestionEtudiants.Models.Type", null)
-                        .WithMany("types")
-                        .HasForeignKey("Typeid");
+                    b.Navigation("Module");
+
+                    b.Navigation("Type");
                 });
 
             modelBuilder.Entity("GestionEtudiants.Models.Etudiant", b =>
@@ -364,14 +442,9 @@ namespace GestionEtudiants.Migrations
                     b.Navigation("notes");
                 });
 
-            modelBuilder.Entity("GestionEtudiants.Models.Proffesseur", b =>
+            modelBuilder.Entity("GestionEtudiants.Models.Professeur", b =>
                 {
                     b.Navigation("modules");
-                });
-
-            modelBuilder.Entity("GestionEtudiants.Models.Type", b =>
-                {
-                    b.Navigation("types");
                 });
 #pragma warning restore 612, 618
         }

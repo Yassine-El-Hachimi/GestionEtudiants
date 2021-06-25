@@ -29,5 +29,9 @@ namespace GestionEtudiants.Models
         [ForeignKey("Module")]
         public Nullable<int> id_module { get; set; }
         public virtual Module Module { get; set; }
+
+        [ForeignKey("Type")]
+        public Nullable<int> id_type { get; set; }
+        public virtual Type Type { get; set; }
     }
 }

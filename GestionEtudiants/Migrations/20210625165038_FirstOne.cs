@@ -2,7 +2,7 @@
 
 namespace GestionEtudiants.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class FirstOne : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,18 +43,11 @@ namespace GestionEtudiants.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    valeur = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Typeid = table.Column<int>(type: "int", nullable: true)
+                    valeur = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Types", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_Types_Types_Typeid",
-                        column: x => x.Typeid,
-                        principalTable: "Types",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -84,23 +77,15 @@ namespace GestionEtudiants.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     nom = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    id_professeur = table.Column<int>(type: "int", nullable: true),
-                    Proffesseurid = table.Column<int>(type: "int", nullable: true),
-                    id_type = table.Column<int>(type: "int", nullable: true)
+                    id_professeur = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Modules", x => x.id);
                     table.ForeignKey(
-                        name: "FK_Modules_Proffesseurs_Proffesseurid",
-                        column: x => x.Proffesseurid,
+                        name: "FK_Modules_Proffesseurs_id_professeur",
+                        column: x => x.id_professeur,
                         principalTable: "Proffesseurs",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Modules_Types_id_type",
-                        column: x => x.id_type,
-                        principalTable: "Types",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -117,6 +102,37 @@ namespace GestionEtudiants.Migrations
                     cin = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     tel = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    massar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    lastname_fr = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    lastname_ar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    firstname_fr = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    firstname_ar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ddn = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ldn = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    natio = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    father_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    father_job = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    mother_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    mother_job = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    parents_adress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    parents_phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    annee = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    filiere = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    type_bac = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    mention_bac = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    annee_bac = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    lycee = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    delegation = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    academie = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    diplome = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ecole = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ville_diplome = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    picture = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    validated = table.Column<int>(type: "int", nullable: false),
+                    password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    code_promo = table.Column<int>(type: "int", nullable: false),
+                    sexe = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     id_inscription = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -163,7 +179,8 @@ namespace GestionEtudiants.Migrations
                     valeur = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     semestre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     evaluation = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    id_module = table.Column<int>(type: "int", nullable: true)
+                    id_module = table.Column<int>(type: "int", nullable: true),
+                    id_type = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -172,6 +189,12 @@ namespace GestionEtudiants.Migrations
                         name: "FK_Notes_Modules_id_module",
                         column: x => x.id_module,
                         principalTable: "Modules",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Notes_Types_id_type",
+                        column: x => x.id_type,
+                        principalTable: "Types",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -241,14 +264,9 @@ namespace GestionEtudiants.Migrations
                 column: "id_filiere");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Modules_id_type",
+                name: "IX_Modules_id_professeur",
                 table: "Modules",
-                column: "id_type");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Modules_Proffesseurid",
-                table: "Modules",
-                column: "Proffesseurid");
+                column: "id_professeur");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Notes_id_module",
@@ -256,9 +274,9 @@ namespace GestionEtudiants.Migrations
                 column: "id_module");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Types_Typeid",
-                table: "Types",
-                column: "Typeid");
+                name: "IX_Notes_id_type",
+                table: "Notes",
+                column: "id_type");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -282,13 +300,13 @@ namespace GestionEtudiants.Migrations
                 name: "Modules");
 
             migrationBuilder.DropTable(
+                name: "Types");
+
+            migrationBuilder.DropTable(
                 name: "Inscriptions");
 
             migrationBuilder.DropTable(
                 name: "Proffesseurs");
-
-            migrationBuilder.DropTable(
-                name: "Types");
 
             migrationBuilder.DropTable(
                 name: "Filieres");

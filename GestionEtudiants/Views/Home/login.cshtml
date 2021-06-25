@@ -91,9 +91,11 @@
                     <div class="card z-index-0">
                         <div class="card-body">
                             <form method="post">
-                                @if (ViewData["et"] != null)
+                                @if (ViewData["error"] != null)
                                 {
-                                    @ViewData["et"]
+                                <div class="alert alert-danger text-center">
+                                    <h6 class="text-white">@ViewData["error"]</h6>
+                                </div>
                                 }
                                 <div class="mb-3">
                                     <input type="text" class="form-control" placeholder="Apogee" name="apogee" asp-for="apogee">

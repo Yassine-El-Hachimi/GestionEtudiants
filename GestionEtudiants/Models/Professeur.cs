@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionEtudiants.Models
 {
-    public class Proffesseur
+    public class Professeur
     {
         
 

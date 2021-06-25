@@ -2,6 +2,7 @@
 using GestionEtudiants.Models;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using Bogus;
 
 namespace GestionEtudiants.Context
 {
@@ -15,7 +16,7 @@ namespace GestionEtudiants.Context
         public DbSet<Document> Documents { get; set; }
         public DbSet<Filiere> Filieres { get; set; }
         public DbSet<Module> Modules { get; set; }
-        public DbSet<Proffesseur> Proffesseurs { get; set; }
+        public DbSet<Professeur> Proffesseurs { get; set; }
         public DbSet<Note> Notes { get; set; }
         public DbSet<GestionEtudiants.Models.Type> Types { get; set; }
 
@@ -33,6 +34,7 @@ namespace GestionEtudiants.Context
         {
             base.OnModelCreating(modelBuilder);
 
+            SchoolDBInitializer db = new SchoolDBInitializer();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
