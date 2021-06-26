@@ -62,6 +62,11 @@ namespace GestionEtudiants.Controllers
             return View();
         }
 
+        public IActionResult Document()
+        {
+            return View();
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> Login(Etudiant et)
@@ -95,7 +100,7 @@ namespace GestionEtudiants.Controllers
             }
         }
 
-
+/*
         [HttpPost]
         public IActionResult DemnderDocument(String type)
         {
@@ -109,7 +114,7 @@ namespace GestionEtudiants.Controllers
 
             return RedirectToAction("Document", "Home");
         }
-
+*/
 
 
         [HttpPost]

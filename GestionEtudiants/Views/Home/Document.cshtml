@@ -1,0 +1,35 @@
+
+@{ ViewData["Title"] = ""; ViewData["Doc"] = "active";}
+           
+<div class="container-fluid py-4">
+    <div class="col-12 col-xl-4">
+                   <div class="card h-100">
+                       <div class="card-header pb-0 p-3">
+                           <div class="row">
+                               <div class="col-md-8 d-flex align-items-center">
+                                   <h6 class="mb-0">Profile Information</h6>
+                               </div>
+                               <div class="col-md-4 text-right">
+                                   <a href="javascript:;">
+                                       <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="" aria-hidden="true" data-bs-original-title="Edit Profile" aria-label="Edit Profile"></i><span class="sr-only">Edit Profile</span>
+                                   </a>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="card-body p-3">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                           
+                                                   <select name="annee" id="annee" class="form-control" required>
+                                                       <option disabled selected>Attestation</option>
+                                                       <option value="Attestation de scolarite">Attestation de scolarite</option>
+                                                       <option value="Releve de note">Releve de note</option>
+                                                       <option value="Attestation de stage">Attestation de stage</option>
+                           
+                                                   </select>
+                                                   <div class="select-dropdown"></div>
+                                               </div>
+                       </div>
+                   </div>
+               </div>
+
+</div>
