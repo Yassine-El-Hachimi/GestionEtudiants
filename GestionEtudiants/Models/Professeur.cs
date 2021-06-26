@@ -29,9 +29,11 @@ namespace GestionEtudiants.Models
         [Required]
         [DataType(DataType.EmailAddress)]
         [StringLenght(50)]
-        public string email { get; set; }     
+        public string email { get; set; }
 
-        public int tel { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        [StringLenght(50)]
+        public string tel { get; set; }
 
         [StringLenght(50)]
         public string address { get; set; }

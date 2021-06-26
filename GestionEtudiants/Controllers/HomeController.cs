@@ -13,17 +13,24 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using GestionEtudiants.Context;
 using GestionEtudiants.ViewModel;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace GestionEtudiants.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        [Obsolete]
+        private readonly IHostingEnvironment _hostEnvironment;
+
         private myContext db = new myContext();
 
-        public HomeController(ILogger<HomeController> logger)
+        [Obsolete]
+        public HomeController(ILogger<HomeController> logger, IHostingEnvironment hostEnvironment)
         {
             _logger = logger;
+            _hostEnvironment = hostEnvironment;
         }
 
         [Authorize]
@@ -40,13 +47,6 @@ namespace GestionEtudiants.Controllers
             var fil = db.Inscriptions.Where(i => i.id == eid).FirstOrDefault();
             var fil_mods = (from fm in db.Filieres where fm.id == fil.id_filiere select fm).FirstOrDefault();
             var modules = (from m in db.Modules where m.filieres.Contains(fil_mods) select m).ToList();
-
-            foreach (var mod in modules)
-            {
-                var notes = (from n in db.Notes where n.id_module == mod.id select n).ToList();
-                cm.Notes.Add(notes);
-            }
-
 
             var profs = (from p in db.Proffesseurs select p).ToList();
 
@@ -66,7 +66,7 @@ namespace GestionEtudiants.Controllers
         public async Task<IActionResult> Login(Etudiant et)
         {
             
-            var x = db.Etudiants.Where(a => a.apogee == et.apogee && a.cin == et.cin).SingleOrDefault();
+            var x = db.Etudiants.Where(a => a.apogee == et.apogee && a.password == et.password).SingleOrDefault();
             if(x != null)
             {
                 HttpContext.Session.SetString("_Nom", x.nom + " " + x.prenom);
@@ -114,10 +114,36 @@ namespace GestionEtudiants.Controllers
             var profs = (from p in db.Proffesseurs select p).ToList();
 
             ConsultationModel cm = new ConsultationModel();
+
+            cm.notes = new Dictionary<int,List<Note>>();
+              
+            foreach (var mod in modules)
+            {
+                var notes = (from n in db.Notes where n.id_module == mod.id select n).ToList();
+                cm.notes.Add(mod.id,notes);
+            }
+            
+
             cm.modules = modules;
             cm.professeurs = profs;
 
             return View(cm);
+        }
+
+        [HttpGet]
+        public FileResult download(string filename)
+        {
+            string path = "";
+            var content_type = "";
+            filename = filename + ".pdf";
+            path = Path.Combine(_hostEnvironment.WebRootPath, "docs\\" + filename);
+
+            if (filename.Contains(".pdf"))
+            {
+                content_type = "application/pdf";
+            }
+            var fs = System.IO.File.OpenRead(path);
+            return File(fs, content_type, filename);
         }
 
         [Authorize]

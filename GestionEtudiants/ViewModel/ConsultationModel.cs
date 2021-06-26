@@ -10,6 +10,6 @@ namespace GestionEtudiants.ViewModel
     {
         public List<Module> modules { get; set; }
         public List<Professeur> professeurs { get; set; }
-        public List<List<Note>> Notes { get; set; }
+        public Dictionary<int,List<Note>> notes { get; set; }
     }
 }

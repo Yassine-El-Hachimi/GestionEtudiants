@@ -13,6 +13,8 @@ namespace GestionEtudiants.Models
         [Key]
         public int id { get; set; }
 
+        public int N_fois { get; set; }
+
         [ForeignKey("Etudiant")]
         public Nullable<int> id_etudiant { get; set; }
         public virtual Etudiant Etudiant { get; set; }

@@ -123,8 +123,7 @@ namespace GestionEtudiants.Models
 
         [StringLenght(50)]
         public String password { get; set; }
-        
-        public int code_promo { get; set; }
+
 
         [StringLenght(50)]
         public String sexe { get; set; }
