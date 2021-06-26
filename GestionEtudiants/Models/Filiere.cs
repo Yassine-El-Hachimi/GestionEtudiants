@@ -18,6 +18,6 @@ namespace GestionEtudiants.Models
 
         public virtual ICollection<Inscription> inscriptions { get; set; }
 
-        public virtual ICollection<Module> modules { get; set; }
+        public virtual ICollection<FiliereModule> FiliereModules { get; set; }
     }
 }

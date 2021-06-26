@@ -22,8 +22,8 @@ namespace GestionEtudiants.Models
         public virtual Professeur Professeur { get; set; }
 
 
+        public virtual ICollection<FiliereModule> FiliereModules { get; set; }
 
-        public virtual ICollection<Filiere> filieres { get; set; }
         public virtual ICollection<Note> notes { get; set; }
     }
 }

@@ -8,8 +8,6 @@ namespace GestionEtudiants.Context
     public class myContext : DbContext
     {
         private readonly DbContextOptions _options;
-        
-        
 
 
         public myContext() : base()
@@ -25,8 +23,10 @@ namespace GestionEtudiants.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            SchoolDBInitializer oodb = new SchoolDBInitializer();
+            modelBuilder.Entity<FiliereModule>()
+                .HasKey(x => new { x.Id });
 
+            SchoolDBInitializer oodb = new SchoolDBInitializer();
 
             modelBuilder.Entity<Type>().HasData(oodb.types);
             modelBuilder.Entity<Absence>().HasData(oodb.absences);
@@ -37,6 +37,7 @@ namespace GestionEtudiants.Context
             modelBuilder.Entity<Module>().HasData(oodb.modules);
             modelBuilder.Entity<Note>().HasData(oodb.notes);
             modelBuilder.Entity<Professeur>().HasData(oodb.professeurs);
+            modelBuilder.Entity<FiliereModule>().HasData(oodb.filiereModules);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -61,7 +62,8 @@ namespace GestionEtudiants.Context
         public DbSet<Module> Modules { get; set; }
         public DbSet<Professeur> Proffesseurs { get; set; }
         public DbSet<Note> Notes { get; set; }
-        public DbSet<GestionEtudiants.Models.Type> Types { get; set; }
+        public DbSet<Type> Types { get; set; }
+        public DbSet<FiliereModule> FiliereModules { get; set; }
 
     }
 }

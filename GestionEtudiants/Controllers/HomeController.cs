@@ -46,7 +46,8 @@ namespace GestionEtudiants.Controllers
             var eid = Int32.Parse(Get("_Id"));
             var fil = db.Inscriptions.Where(i => i.id == eid).FirstOrDefault();
             var fil_mods = (from fm in db.Filieres where fm.id == fil.id_filiere select fm).FirstOrDefault();
-            var modules = (from m in db.Modules where m.filieres.Contains(fil_mods) select m).ToList();
+            var id_mod = (from im in db.FiliereModules where im.FiliereId == fil_mods.id select im.ModuleId ).ToList();
+            var modules = (from m in db.Modules where id_mod.Contains(m.id) select m).ToList();
 
             var profs = (from p in db.Proffesseurs select p).ToList();
 
@@ -76,7 +77,7 @@ namespace GestionEtudiants.Controllers
 
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, et.cin)
+                    new Claim(ClaimTypes.Name, x.cin)
                 };
 
                 var identity = new ClaimsIdentity(
@@ -94,6 +95,35 @@ namespace GestionEtudiants.Controllers
             }
         }
 
+
+        [HttpPost]
+        public IActionResult DemnderDocument(String type)
+        {
+            Document dc = new Document() { 
+                id_etudiant = Int32.Parse(Get("_Id")),
+                type = type
+            };
+
+            db.Documents.Add(dc);
+            db.SaveChanges();
+
+            return RedirectToAction("Document", "Home");
+        }
+
+
+
+        [HttpPost]
+        public IActionResult UpdateStudent(Etudiant et)
+        {
+            var eid = Int32.Parse(Get("_Id"));
+            var x = db.Etudiants.Where(a => a.apogee == et.apogee && a.password == et.password).SingleOrDefault();
+
+            x.password = et.password;
+            db.SaveChanges();
+
+            return RedirectToAction("Profile", "Home");
+        }
+
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
@@ -109,7 +139,8 @@ namespace GestionEtudiants.Controllers
             var eid = Int32.Parse(Get("_Id")); 
             var fil = db.Inscriptions.Where(i => i.id == eid).FirstOrDefault();
             var fil_mods = (from fm in db.Filieres where fm.id == fil.id_filiere select  fm ).FirstOrDefault();
-            var modules = (from m in db.Modules where m.filieres.Contains(fil_mods) select m).ToList();
+            var id_mod = (from im in db.FiliereModules where im.FiliereId == fil_mods.id select im.ModuleId).ToList();
+            var modules = (from m in db.Modules where id_mod.Contains(m.id) select m).ToList();
 
             var profs = (from p in db.Proffesseurs select p).ToList();
 

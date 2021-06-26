@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionEtudiants.Migrations
 {
     [DbContext(typeof(myContext))]
-    [Migration("20210626103956_opla")]
-    partial class opla
+    [Migration("20210626175847_ops")]
+    partial class ops
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,21 +20,6 @@ namespace GestionEtudiants.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.7")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("FiliereModule", b =>
-                {
-                    b.Property<int>("filieresid")
-                        .HasColumnType("int");
-
-                    b.Property<int>("modulesid")
-                        .HasColumnType("int");
-
-                    b.HasKey("filieresid", "modulesid");
-
-                    b.HasIndex("modulesid");
-
-                    b.ToTable("FiliereModule");
-                });
 
             modelBuilder.Entity("GestionEtudiants.Models.Absence", b =>
                 {
@@ -59,152 +44,152 @@ namespace GestionEtudiants.Migrations
                         new
                         {
                             id = 1,
-                            N_fois = 13,
-                            id_etudiant = 2007
+                            N_fois = 10,
+                            id_etudiant = 2000
                         },
                         new
                         {
                             id = 2,
-                            N_fois = 2,
-                            id_etudiant = 2009
-                        },
-                        new
-                        {
-                            id = 3,
-                            N_fois = 0,
+                            N_fois = 13,
                             id_etudiant = 2005
                         },
                         new
                         {
+                            id = 3,
+                            N_fois = 14,
+                            id_etudiant = 2006
+                        },
+                        new
+                        {
                             id = 4,
-                            N_fois = 3,
+                            N_fois = 5,
                             id_etudiant = 2001
                         },
                         new
                         {
                             id = 5,
-                            N_fois = 13,
-                            id_etudiant = 2006
+                            N_fois = 7,
+                            id_etudiant = 2005
                         },
                         new
                         {
                             id = 6,
-                            N_fois = 8,
-                            id_etudiant = 2006
+                            N_fois = 4,
+                            id_etudiant = 2003
                         },
                         new
                         {
                             id = 7,
                             N_fois = 2,
-                            id_etudiant = 2002
+                            id_etudiant = 2008
                         },
                         new
                         {
                             id = 8,
                             N_fois = 1,
-                            id_etudiant = 2009
+                            id_etudiant = 2007
                         },
                         new
                         {
                             id = 9,
-                            N_fois = 13,
+                            N_fois = 0,
                             id_etudiant = 2006
                         },
                         new
                         {
                             id = 10,
-                            N_fois = 2,
-                            id_etudiant = 2009
+                            N_fois = 15,
+                            id_etudiant = 2001
                         },
                         new
                         {
                             id = 11,
-                            N_fois = 10,
-                            id_etudiant = 2007
+                            N_fois = 1,
+                            id_etudiant = 2006
                         },
                         new
                         {
                             id = 12,
-                            N_fois = 5,
-                            id_etudiant = 2003
-                        },
-                        new
-                        {
-                            id = 13,
                             N_fois = 9,
                             id_etudiant = 2002
                         },
                         new
                         {
+                            id = 13,
+                            N_fois = 6,
+                            id_etudiant = 2008
+                        },
+                        new
+                        {
                             id = 14,
+                            N_fois = 1,
+                            id_etudiant = 2000
+                        },
+                        new
+                        {
+                            id = 15,
+                            N_fois = 1,
+                            id_etudiant = 2006
+                        },
+                        new
+                        {
+                            id = 16,
                             N_fois = 4,
                             id_etudiant = 2005
                         },
                         new
                         {
-                            id = 15,
-                            N_fois = 13,
-                            id_etudiant = 2007
-                        },
-                        new
-                        {
-                            id = 16,
-                            N_fois = 13,
-                            id_etudiant = 2005
-                        },
-                        new
-                        {
                             id = 17,
-                            N_fois = 6,
+                            N_fois = 4,
                             id_etudiant = 2005
                         },
                         new
                         {
                             id = 18,
-                            N_fois = 3,
-                            id_etudiant = 2007
+                            N_fois = 9,
+                            id_etudiant = 2001
                         },
                         new
                         {
                             id = 19,
-                            N_fois = 2,
-                            id_etudiant = 2000
+                            N_fois = 8,
+                            id_etudiant = 2004
                         },
                         new
                         {
                             id = 20,
                             N_fois = 3,
-                            id_etudiant = 2005
+                            id_etudiant = 2006
                         },
                         new
                         {
                             id = 21,
-                            N_fois = 15,
-                            id_etudiant = 2004
-                        },
-                        new
-                        {
-                            id = 22,
-                            N_fois = 5,
+                            N_fois = 3,
                             id_etudiant = 2007
                         },
                         new
                         {
-                            id = 23,
+                            id = 22,
                             N_fois = 14,
-                            id_etudiant = 2001
-                        },
-                        new
-                        {
-                            id = 24,
-                            N_fois = 15,
                             id_etudiant = 2003
                         },
                         new
                         {
+                            id = 23,
+                            N_fois = 2,
+                            id_etudiant = 2007
+                        },
+                        new
+                        {
+                            id = 24,
+                            N_fois = 9,
+                            id_etudiant = 2009
+                        },
+                        new
+                        {
                             id = 25,
-                            N_fois = 14,
-                            id_etudiant = 2001
+                            N_fois = 1,
+                            id_etudiant = 2009
                         });
                 });
 
@@ -232,49 +217,49 @@ namespace GestionEtudiants.Migrations
                         {
                             id = 1,
                             id_etudiant = 2000,
-                            type = "B"
+                            type = "C"
                         },
                         new
                         {
                             id = 2,
-                            id_etudiant = 2006,
-                            type = "A"
+                            id_etudiant = 2008,
+                            type = "C"
                         },
                         new
                         {
                             id = 3,
-                            id_etudiant = 2000,
-                            type = "B"
+                            id_etudiant = 2009,
+                            type = "A"
                         },
                         new
                         {
                             id = 4,
-                            id_etudiant = 2007,
+                            id_etudiant = 2006,
                             type = "B"
                         },
                         new
                         {
                             id = 5,
-                            id_etudiant = 2008,
-                            type = "B"
-                        },
-                        new
-                        {
-                            id = 6,
-                            id_etudiant = 2007,
+                            id_etudiant = 2000,
                             type = "A"
                         },
                         new
                         {
-                            id = 7,
-                            id_etudiant = 2000,
+                            id = 6,
+                            id_etudiant = 2003,
                             type = "B"
                         },
                         new
                         {
+                            id = 7,
+                            id_etudiant = 2008,
+                            type = "A"
+                        },
+                        new
+                        {
                             id = 8,
-                            id_etudiant = 2009,
-                            type = "C"
+                            id_etudiant = 2007,
+                            type = "A"
                         },
                         new
                         {
@@ -285,398 +270,398 @@ namespace GestionEtudiants.Migrations
                         new
                         {
                             id = 10,
-                            id_etudiant = 2002,
+                            id_etudiant = 2009,
                             type = "A"
                         },
                         new
                         {
                             id = 11,
-                            id_etudiant = 2008,
-                            type = "C"
+                            id_etudiant = 2006,
+                            type = "A"
                         },
                         new
                         {
                             id = 12,
-                            id_etudiant = 2006,
+                            id_etudiant = 2003,
                             type = "B"
                         },
                         new
                         {
                             id = 13,
-                            id_etudiant = 2001,
+                            id_etudiant = 2003,
                             type = "C"
                         },
                         new
                         {
                             id = 14,
-                            id_etudiant = 2005,
-                            type = "B"
+                            id_etudiant = 2002,
+                            type = "C"
                         },
                         new
                         {
                             id = 15,
-                            id_etudiant = 2004,
-                            type = "B"
+                            id_etudiant = 2006,
+                            type = "A"
                         },
                         new
                         {
                             id = 16,
-                            id_etudiant = 2008,
+                            id_etudiant = 2001,
                             type = "A"
                         },
                         new
                         {
                             id = 17,
-                            id_etudiant = 2006,
-                            type = "B"
+                            id_etudiant = 2001,
+                            type = "C"
                         },
                         new
                         {
                             id = 18,
-                            id_etudiant = 2007,
-                            type = "B"
+                            id_etudiant = 2002,
+                            type = "C"
                         },
                         new
                         {
                             id = 19,
-                            id_etudiant = 2008,
+                            id_etudiant = 2004,
                             type = "B"
                         },
                         new
                         {
                             id = 20,
-                            id_etudiant = 2001,
-                            type = "C"
+                            id_etudiant = 2006,
+                            type = "B"
                         },
                         new
                         {
                             id = 21,
-                            id_etudiant = 2003,
-                            type = "B"
+                            id_etudiant = 2008,
+                            type = "C"
                         },
                         new
                         {
                             id = 22,
-                            id_etudiant = 2003,
-                            type = "B"
+                            id_etudiant = 2001,
+                            type = "A"
                         },
                         new
                         {
                             id = 23,
-                            id_etudiant = 2002,
+                            id_etudiant = 2009,
                             type = "A"
                         },
                         new
                         {
                             id = 24,
-                            id_etudiant = 2002,
-                            type = "A"
-                        },
-                        new
-                        {
-                            id = 25,
-                            id_etudiant = 2008,
-                            type = "C"
-                        },
-                        new
-                        {
-                            id = 26,
-                            id_etudiant = 2003,
-                            type = "C"
-                        },
-                        new
-                        {
-                            id = 27,
-                            id_etudiant = 2006,
-                            type = "A"
-                        },
-                        new
-                        {
-                            id = 28,
-                            id_etudiant = 2005,
+                            id_etudiant = 2001,
                             type = "B"
                         },
                         new
                         {
+                            id = 25,
+                            id_etudiant = 2004,
+                            type = "A"
+                        },
+                        new
+                        {
+                            id = 26,
+                            id_etudiant = 2009,
+                            type = "B"
+                        },
+                        new
+                        {
+                            id = 27,
+                            id_etudiant = 2001,
+                            type = "C"
+                        },
+                        new
+                        {
+                            id = 28,
+                            id_etudiant = 2002,
+                            type = "C"
+                        },
+                        new
+                        {
                             id = 29,
-                            id_etudiant = 2003,
+                            id_etudiant = 2006,
                             type = "B"
                         },
                         new
                         {
                             id = 30,
-                            id_etudiant = 2003,
-                            type = "B"
+                            id_etudiant = 2006,
+                            type = "C"
                         },
                         new
                         {
                             id = 31,
-                            id_etudiant = 2007,
-                            type = "B"
+                            id_etudiant = 2002,
+                            type = "A"
                         },
                         new
                         {
                             id = 32,
-                            id_etudiant = 2009,
-                            type = "A"
+                            id_etudiant = 2004,
+                            type = "B"
                         },
                         new
                         {
                             id = 33,
                             id_etudiant = 2004,
-                            type = "B"
+                            type = "C"
                         },
                         new
                         {
                             id = 34,
-                            id_etudiant = 2006,
-                            type = "A"
+                            id_etudiant = 2000,
+                            type = "B"
                         },
                         new
                         {
                             id = 35,
-                            id_etudiant = 2000,
+                            id_etudiant = 2009,
                             type = "C"
                         },
                         new
                         {
                             id = 36,
-                            id_etudiant = 2003,
-                            type = "B"
+                            id_etudiant = 2006,
+                            type = "A"
                         },
                         new
                         {
                             id = 37,
-                            id_etudiant = 2009,
-                            type = "B"
+                            id_etudiant = 2005,
+                            type = "A"
                         },
                         new
                         {
                             id = 38,
-                            id_etudiant = 2003,
-                            type = "C"
-                        },
-                        new
-                        {
-                            id = 39,
-                            id_etudiant = 2000,
-                            type = "A"
-                        },
-                        new
-                        {
-                            id = 40,
-                            id_etudiant = 2007,
-                            type = "B"
-                        },
-                        new
-                        {
-                            id = 41,
-                            id_etudiant = 2001,
-                            type = "A"
-                        },
-                        new
-                        {
-                            id = 42,
-                            id_etudiant = 2006,
-                            type = "B"
-                        },
-                        new
-                        {
-                            id = 43,
-                            id_etudiant = 2008,
-                            type = "B"
-                        },
-                        new
-                        {
-                            id = 44,
-                            id_etudiant = 2009,
-                            type = "B"
-                        },
-                        new
-                        {
-                            id = 45,
-                            id_etudiant = 2008,
-                            type = "A"
-                        },
-                        new
-                        {
-                            id = 46,
-                            id_etudiant = 2001,
-                            type = "A"
-                        },
-                        new
-                        {
-                            id = 47,
-                            id_etudiant = 2006,
-                            type = "A"
-                        },
-                        new
-                        {
-                            id = 48,
-                            id_etudiant = 2006,
-                            type = "B"
-                        },
-                        new
-                        {
-                            id = 49,
-                            id_etudiant = 2006,
-                            type = "A"
-                        },
-                        new
-                        {
-                            id = 50,
-                            id_etudiant = 2008,
-                            type = "C"
-                        },
-                        new
-                        {
-                            id = 51,
                             id_etudiant = 2004,
                             type = "A"
                         },
                         new
                         {
-                            id = 52,
-                            id_etudiant = 2008,
-                            type = "B"
-                        },
-                        new
-                        {
-                            id = 53,
-                            id_etudiant = 2006,
-                            type = "B"
-                        },
-                        new
-                        {
-                            id = 54,
-                            id_etudiant = 2003,
-                            type = "C"
-                        },
-                        new
-                        {
-                            id = 55,
-                            id_etudiant = 2000,
-                            type = "C"
-                        },
-                        new
-                        {
-                            id = 56,
-                            id_etudiant = 2005,
+                            id = 39,
+                            id_etudiant = 2002,
                             type = "A"
                         },
                         new
                         {
-                            id = 57,
+                            id = 40,
                             id_etudiant = 2009,
+                            type = "A"
+                        },
+                        new
+                        {
+                            id = 41,
+                            id_etudiant = 2006,
                             type = "C"
                         },
                         new
                         {
-                            id = 58,
-                            id_etudiant = 2005,
-                            type = "B"
-                        },
-                        new
-                        {
-                            id = 59,
+                            id = 42,
                             id_etudiant = 2006,
                             type = "A"
                         },
                         new
                         {
-                            id = 60,
+                            id = 43,
+                            id_etudiant = 2003,
+                            type = "A"
+                        },
+                        new
+                        {
+                            id = 44,
                             id_etudiant = 2007,
                             type = "B"
                         },
                         new
                         {
-                            id = 61,
+                            id = 45,
+                            id_etudiant = 2006,
+                            type = "B"
+                        },
+                        new
+                        {
+                            id = 46,
+                            id_etudiant = 2009,
+                            type = "B"
+                        },
+                        new
+                        {
+                            id = 47,
+                            id_etudiant = 2007,
+                            type = "B"
+                        },
+                        new
+                        {
+                            id = 48,
+                            id_etudiant = 2004,
+                            type = "B"
+                        },
+                        new
+                        {
+                            id = 49,
+                            id_etudiant = 2008,
+                            type = "A"
+                        },
+                        new
+                        {
+                            id = 50,
+                            id_etudiant = 2006,
+                            type = "B"
+                        },
+                        new
+                        {
+                            id = 51,
+                            id_etudiant = 2005,
+                            type = "B"
+                        },
+                        new
+                        {
+                            id = 52,
+                            id_etudiant = 2001,
+                            type = "A"
+                        },
+                        new
+                        {
+                            id = 53,
                             id_etudiant = 2000,
+                            type = "A"
+                        },
+                        new
+                        {
+                            id = 54,
+                            id_etudiant = 2002,
                             type = "C"
                         },
                         new
                         {
+                            id = 55,
+                            id_etudiant = 2003,
+                            type = "C"
+                        },
+                        new
+                        {
+                            id = 56,
+                            id_etudiant = 2003,
+                            type = "C"
+                        },
+                        new
+                        {
+                            id = 57,
+                            id_etudiant = 2000,
+                            type = "B"
+                        },
+                        new
+                        {
+                            id = 58,
+                            id_etudiant = 2005,
+                            type = "C"
+                        },
+                        new
+                        {
+                            id = 59,
+                            id_etudiant = 2009,
+                            type = "A"
+                        },
+                        new
+                        {
+                            id = 60,
+                            id_etudiant = 2003,
+                            type = "B"
+                        },
+                        new
+                        {
+                            id = 61,
+                            id_etudiant = 2005,
+                            type = "A"
+                        },
+                        new
+                        {
                             id = 62,
-                            id_etudiant = 2008,
+                            id_etudiant = 2002,
                             type = "B"
                         },
                         new
                         {
                             id = 63,
                             id_etudiant = 2003,
-                            type = "C"
+                            type = "B"
                         },
                         new
                         {
                             id = 64,
-                            id_etudiant = 2009,
+                            id_etudiant = 2003,
                             type = "A"
                         },
                         new
                         {
                             id = 65,
-                            id_etudiant = 2002,
-                            type = "B"
+                            id_etudiant = 2007,
+                            type = "A"
                         },
                         new
                         {
                             id = 66,
-                            id_etudiant = 2005,
+                            id_etudiant = 2004,
                             type = "A"
                         },
                         new
                         {
                             id = 67,
                             id_etudiant = 2005,
-                            type = "A"
+                            type = "C"
                         },
                         new
                         {
                             id = 68,
-                            id_etudiant = 2006,
+                            id_etudiant = 2001,
                             type = "B"
                         },
                         new
                         {
                             id = 69,
-                            id_etudiant = 2007,
+                            id_etudiant = 2000,
                             type = "B"
                         },
                         new
                         {
                             id = 70,
-                            id_etudiant = 2008,
-                            type = "A"
-                        },
-                        new
-                        {
-                            id = 71,
-                            id_etudiant = 2003,
-                            type = "A"
-                        },
-                        new
-                        {
-                            id = 72,
-                            id_etudiant = 2002,
-                            type = "A"
-                        },
-                        new
-                        {
-                            id = 73,
-                            id_etudiant = 2006,
+                            id_etudiant = 2000,
                             type = "B"
                         },
                         new
                         {
+                            id = 71,
+                            id_etudiant = 2000,
+                            type = "B"
+                        },
+                        new
+                        {
+                            id = 72,
+                            id_etudiant = 2000,
+                            type = "C"
+                        },
+                        new
+                        {
+                            id = 73,
+                            id_etudiant = 2002,
+                            type = "C"
+                        },
+                        new
+                        {
                             id = 74,
-                            id_etudiant = 2003,
-                            type = "A"
+                            id_etudiant = 2004,
+                            type = "B"
                         },
                         new
                         {
                             id = 75,
-                            id_etudiant = 2009,
-                            type = "A"
+                            id_etudiant = 2008,
+                            type = "C"
                         });
                 });
 
@@ -812,121 +797,121 @@ namespace GestionEtudiants.Migrations
                         new
                         {
                             apogee = 2000,
-                            cin = "EE30565",
-                            email = "Katherine.Feest@hotmail.com",
-                            id_inscription = 5,
-                            nom = "Feest",
+                            cin = "EE6406",
+                            email = "Antoinette_Fahey@yahoo.com",
+                            id_inscription = 6,
+                            nom = "Fahey",
                             password = "0000",
-                            prenom = "Katherine",
+                            prenom = "Antoinette",
                             sexe = "Female",
                             validated = 1
                         },
                         new
                         {
                             apogee = 2001,
-                            cin = "EE20610",
-                            email = "Victor.Fadel98@yahoo.com",
-                            id_inscription = 9,
-                            nom = "Fadel",
+                            cin = "EE58834",
+                            email = "Chelsea_Zemlak@gmail.com",
+                            id_inscription = 4,
+                            nom = "Zemlak",
                             password = "0000",
-                            prenom = "Victor",
-                            sexe = "Male",
+                            prenom = "Chelsea",
+                            sexe = "Female",
                             validated = 1
                         },
                         new
                         {
                             apogee = 2002,
-                            cin = "EE59037",
-                            email = "Terry69@yahoo.com",
-                            id_inscription = 4,
-                            nom = "Powlowski",
+                            cin = "EE39510",
+                            email = "Molly_Bruen@gmail.com",
+                            id_inscription = 1,
+                            nom = "Bruen",
                             password = "0000",
-                            prenom = "Terry",
-                            sexe = "Male",
+                            prenom = "Molly",
+                            sexe = "Female",
                             validated = 1
                         },
                         new
                         {
                             apogee = 2003,
-                            cin = "EE34458",
-                            email = "Laurie_Kovacek66@hotmail.com",
-                            id_inscription = 1,
-                            nom = "Kovacek",
+                            cin = "EE24228",
+                            email = "Roberta_Williamson@yahoo.com",
+                            id_inscription = 6,
+                            nom = "Williamson",
                             password = "0000",
-                            prenom = "Laurie",
+                            prenom = "Roberta",
                             sexe = "Female",
                             validated = 1
                         },
                         new
                         {
                             apogee = 2004,
-                            cin = "EE6013",
-                            email = "Stewart72@yahoo.com",
-                            id_inscription = 8,
-                            nom = "Roob",
+                            cin = "EE34030",
+                            email = "Nichole_Schmitt@gmail.com",
+                            id_inscription = 2,
+                            nom = "Schmitt",
                             password = "0000",
-                            prenom = "Stewart",
-                            sexe = "Male",
+                            prenom = "Nichole",
+                            sexe = "Female",
                             validated = 1
                         },
                         new
                         {
                             apogee = 2005,
-                            cin = "EE46732",
-                            email = "Brad.Keeling@yahoo.com",
-                            id_inscription = 9,
-                            nom = "Keeling",
+                            cin = "EE35969",
+                            email = "Minnie_Langosh66@yahoo.com",
+                            id_inscription = 5,
+                            nom = "Langosh",
                             password = "0000",
-                            prenom = "Brad",
-                            sexe = "Male",
+                            prenom = "Minnie",
+                            sexe = "Female",
                             validated = 1
                         },
                         new
                         {
                             apogee = 2006,
-                            cin = "EE30125",
-                            email = "Kurt54@hotmail.com",
-                            id_inscription = 3,
-                            nom = "Brekke",
+                            cin = "EE43268",
+                            email = "Wallace49@yahoo.com",
+                            id_inscription = 10,
+                            nom = "Langosh",
                             password = "0000",
-                            prenom = "Kurt",
+                            prenom = "Wallace",
                             sexe = "Male",
                             validated = 1
                         },
                         new
                         {
                             apogee = 2007,
-                            cin = "EE33772",
-                            email = "Stuart10@hotmail.com",
-                            id_inscription = 9,
-                            nom = "Harvey",
+                            cin = "EE19201",
+                            email = "Sonya.Botsford@gmail.com",
+                            id_inscription = 3,
+                            nom = "Botsford",
                             password = "0000",
-                            prenom = "Stuart",
-                            sexe = "Male",
+                            prenom = "Sonya",
+                            sexe = "Female",
                             validated = 1
                         },
                         new
                         {
                             apogee = 2008,
-                            cin = "EE109",
-                            email = "Regina.Harris9@hotmail.com",
-                            id_inscription = 6,
-                            nom = "Harris",
+                            cin = "EE53330",
+                            email = "Delia.Lueilwitz86@yahoo.com",
+                            id_inscription = 9,
+                            nom = "Lueilwitz",
                             password = "0000",
-                            prenom = "Regina",
+                            prenom = "Delia",
                             sexe = "Female",
                             validated = 1
                         },
                         new
                         {
                             apogee = 2009,
-                            cin = "EE32226",
-                            email = "Terry.Mueller92@yahoo.com",
+                            cin = "EE59426",
+                            email = "Connie_Osinski@yahoo.com",
                             id_inscription = 2,
-                            nom = "Mueller",
+                            nom = "Osinski",
                             password = "0000",
-                            prenom = "Terry",
-                            sexe = "Male",
+                            prenom = "Connie",
+                            sexe = "Female",
                             validated = 1
                         });
                 });
@@ -969,6 +954,126 @@ namespace GestionEtudiants.Migrations
                         });
                 });
 
+            modelBuilder.Entity("GestionEtudiants.Models.FiliereModule", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("FiliereId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ModuleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FiliereId");
+
+                    b.HasIndex("ModuleId");
+
+                    b.ToTable("FiliereModules");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FiliereId = 2,
+                            ModuleId = 5
+                        },
+                        new
+                        {
+                            Id = 2,
+                            FiliereId = 1,
+                            ModuleId = 5
+                        },
+                        new
+                        {
+                            Id = 3,
+                            FiliereId = 4,
+                            ModuleId = 7
+                        },
+                        new
+                        {
+                            Id = 4,
+                            FiliereId = 4,
+                            ModuleId = 12
+                        },
+                        new
+                        {
+                            Id = 5,
+                            FiliereId = 4,
+                            ModuleId = 10
+                        },
+                        new
+                        {
+                            Id = 6,
+                            FiliereId = 3,
+                            ModuleId = 10
+                        },
+                        new
+                        {
+                            Id = 7,
+                            FiliereId = 1,
+                            ModuleId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            FiliereId = 2,
+                            ModuleId = 3
+                        },
+                        new
+                        {
+                            Id = 9,
+                            FiliereId = 4,
+                            ModuleId = 7
+                        },
+                        new
+                        {
+                            Id = 10,
+                            FiliereId = 3,
+                            ModuleId = 8
+                        },
+                        new
+                        {
+                            Id = 11,
+                            FiliereId = 1,
+                            ModuleId = 2
+                        },
+                        new
+                        {
+                            Id = 12,
+                            FiliereId = 2,
+                            ModuleId = 6
+                        },
+                        new
+                        {
+                            Id = 13,
+                            FiliereId = 4,
+                            ModuleId = 11
+                        },
+                        new
+                        {
+                            Id = 14,
+                            FiliereId = 3,
+                            ModuleId = 9
+                        },
+                        new
+                        {
+                            Id = 15,
+                            FiliereId = 1,
+                            ModuleId = 7
+                        },
+                        new
+                        {
+                            Id = 16,
+                            FiliereId = 3,
+                            ModuleId = 10
+                        });
+                });
+
             modelBuilder.Entity("GestionEtudiants.Models.Inscription", b =>
                 {
                     b.Property<int>("id")
@@ -993,25 +1098,25 @@ namespace GestionEtudiants.Migrations
                         {
                             id = 1,
                             annee_uni = "2020/2021",
-                            id_filiere = 2
+                            id_filiere = 3
                         },
                         new
                         {
                             id = 2,
                             annee_uni = "2020/2021",
-                            id_filiere = 1
+                            id_filiere = 4
                         },
                         new
                         {
                             id = 3,
                             annee_uni = "2020/2021",
-                            id_filiere = 2
+                            id_filiere = 4
                         },
                         new
                         {
                             id = 4,
                             annee_uni = "2020/2021",
-                            id_filiere = 3
+                            id_filiere = 1
                         },
                         new
                         {
@@ -1023,7 +1128,7 @@ namespace GestionEtudiants.Migrations
                         {
                             id = 6,
                             annee_uni = "2020/2021",
-                            id_filiere = 2
+                            id_filiere = 4
                         },
                         new
                         {
@@ -1035,7 +1140,7 @@ namespace GestionEtudiants.Migrations
                         {
                             id = 8,
                             annee_uni = "2020/2021",
-                            id_filiere = 3
+                            id_filiere = 4
                         },
                         new
                         {
@@ -1047,7 +1152,7 @@ namespace GestionEtudiants.Migrations
                         {
                             id = 10,
                             annee_uni = "2020/2021",
-                            id_filiere = 4
+                            id_filiere = 3
                         });
                 });
 
@@ -1075,74 +1180,74 @@ namespace GestionEtudiants.Migrations
                         new
                         {
                             id = 1,
-                            id_professeur = 4,
-                            nom = "Buckinghamshire Plains Organic"
+                            id_professeur = 12,
+                            nom = "Ergonomic Fresh Bacon website New York"
                         },
                         new
                         {
                             id = 2,
-                            id_professeur = 1,
-                            nom = "array Groves Frozen"
+                            id_professeur = 10,
+                            nom = "compressing Guinea-Bissau Operations"
                         },
                         new
                         {
                             id = 3,
-                            id_professeur = 6,
-                            nom = "Grass-roots withdrawal back-end"
+                            id_professeur = 5,
+                            nom = "bus Investment Account orange"
                         },
                         new
                         {
                             id = 4,
-                            id_professeur = 15,
-                            nom = "approach Garden, Automotive & Electronics Throughway"
+                            id_professeur = 10,
+                            nom = "Assistant PCI eyeballs"
                         },
                         new
                         {
                             id = 5,
-                            id_professeur = 4,
-                            nom = "Garden 24/365 Phased"
+                            id_professeur = 8,
+                            nom = "copy orchid recontextualize"
                         },
                         new
                         {
                             id = 6,
-                            id_professeur = 10,
-                            nom = "Incredible application Forint"
+                            id_professeur = 12,
+                            nom = "Handmade silver JSON"
                         },
                         new
                         {
                             id = 7,
-                            id_professeur = 22,
-                            nom = "Savings Account quantifying Mississippi"
+                            id_professeur = 1,
+                            nom = "customized Communications payment"
                         },
                         new
                         {
                             id = 8,
-                            id_professeur = 21,
-                            nom = "Ferry Expressway Investment Account"
+                            id_professeur = 23,
+                            nom = "compressing Assurance programming"
                         },
                         new
                         {
                             id = 9,
-                            id_professeur = 22,
-                            nom = "THX Corporate Cambridgeshire"
+                            id_professeur = 15,
+                            nom = "Kids & Games markets Unbranded Plastic Fish"
                         },
                         new
                         {
                             id = 10,
-                            id_professeur = 6,
-                            nom = "quantifying Personal Loan Account generate"
+                            id_professeur = 8,
+                            nom = "California deposit Loop"
                         },
                         new
                         {
                             id = 11,
-                            id_professeur = 5,
-                            nom = "Berkshire Pass alarm"
+                            id_professeur = 19,
+                            nom = "deliverables invoice Legacy"
                         },
                         new
                         {
                             id = 12,
-                            id_professeur = 23,
-                            nom = "Ergonomic Rubber Chair models HTTP"
+                            id_professeur = 14,
+                            nom = "Iraqi Dinar Program upward-trending"
                         });
                 });
 
@@ -1183,110 +1288,110 @@ namespace GestionEtudiants.Migrations
                         new
                         {
                             id = 1,
-                            evaluation = "conglomeration",
-                            id_module = 8,
+                            evaluation = "local area network",
+                            id_module = 5,
                             id_type = 1,
                             semestre = "0",
-                            valeur = "14"
+                            valeur = "17"
                         },
                         new
                         {
                             id = 2,
-                            evaluation = "Borders",
-                            id_module = 8,
-                            id_type = 1,
-                            semestre = "2",
-                            valeur = "16"
+                            evaluation = "e-markets",
+                            id_module = 11,
+                            id_type = 2,
+                            semestre = "1",
+                            valeur = "4"
                         },
                         new
                         {
                             id = 3,
-                            evaluation = "solid state",
-                            id_module = 3,
+                            evaluation = "synergistic",
+                            id_module = 2,
                             id_type = 2,
-                            semestre = "1",
-                            valeur = "13"
+                            semestre = "0",
+                            valeur = "17"
                         },
                         new
                         {
                             id = 4,
-                            evaluation = "Personal Loan Account",
-                            id_module = 11,
-                            id_type = 3,
-                            semestre = "0",
-                            valeur = "16"
-                        },
-                        new
-                        {
-                            id = 5,
-                            evaluation = "enable",
-                            id_module = 9,
+                            evaluation = "Gorgeous Steel Hat",
+                            id_module = 5,
                             id_type = 2,
-                            semestre = "1",
-                            valeur = "1"
-                        },
-                        new
-                        {
-                            id = 6,
-                            evaluation = "index",
-                            id_module = 12,
-                            id_type = 3,
-                            semestre = "0",
-                            valeur = "7"
-                        },
-                        new
-                        {
-                            id = 7,
-                            evaluation = "quantify",
-                            id_module = 3,
-                            id_type = 1,
                             semestre = "1",
                             valeur = "17"
                         },
                         new
                         {
-                            id = 8,
-                            evaluation = "e-markets",
-                            id_module = 4,
-                            id_type = 1,
+                            id = 5,
+                            evaluation = "Fresh",
+                            id_module = 9,
+                            id_type = 3,
                             semestre = "1",
-                            valeur = "18"
+                            valeur = "0"
                         },
                         new
                         {
-                            id = 9,
-                            evaluation = "Handmade Concrete Salad",
-                            id_module = 3,
+                            id = 6,
+                            evaluation = "payment",
+                            id_module = 1,
                             id_type = 2,
                             semestre = "2",
-                            valeur = "12"
-                        },
-                        new
-                        {
-                            id = 10,
-                            evaluation = "Avon",
-                            id_module = 5,
-                            id_type = 2,
-                            semestre = "2",
-                            valeur = "9"
-                        },
-                        new
-                        {
-                            id = 11,
-                            evaluation = "Western Sahara",
-                            id_module = 2,
-                            id_type = 1,
-                            semestre = "1",
                             valeur = "16"
                         },
                         new
                         {
-                            id = 12,
-                            evaluation = "Pakistan Rupee",
-                            id_module = 4,
-                            id_type = 1,
+                            id = 7,
+                            evaluation = "Louisiana",
+                            id_module = 8,
+                            id_type = 3,
                             semestre = "2",
-                            valeur = "6"
+                            valeur = "5"
+                        },
+                        new
+                        {
+                            id = 8,
+                            evaluation = "Money Market Account",
+                            id_module = 9,
+                            id_type = 3,
+                            semestre = "0",
+                            valeur = "0"
+                        },
+                        new
+                        {
+                            id = 9,
+                            evaluation = "Belgium",
+                            id_module = 3,
+                            id_type = 3,
+                            semestre = "0",
+                            valeur = "19"
+                        },
+                        new
+                        {
+                            id = 10,
+                            evaluation = "system",
+                            id_module = 1,
+                            id_type = 3,
+                            semestre = "0",
+                            valeur = "15"
+                        },
+                        new
+                        {
+                            id = 11,
+                            evaluation = "Massachusetts",
+                            id_module = 4,
+                            id_type = 2,
+                            semestre = "0",
+                            valeur = "0"
+                        },
+                        new
+                        {
+                            id = 12,
+                            evaluation = "Principal",
+                            id_module = 10,
+                            id_type = 3,
+                            semestre = "1",
+                            valeur = "17"
                         });
                 });
 
@@ -1327,251 +1432,251 @@ namespace GestionEtudiants.Migrations
                         {
                             id = 1,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE779357",
-                            email = "Sandra_King@yahoo.com",
-                            nom = "King",
-                            prenom = "Sandra",
-                            tel = "1-583-633-6062 x59144"
+                            cin = "EE345121",
+                            email = "Albert.Pacocha@hotmail.com",
+                            nom = "Pacocha",
+                            prenom = "Albert",
+                            tel = "(320) 406-7248 x131"
                         },
                         new
                         {
                             id = 2,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE489766",
-                            email = "Owen_Davis94@hotmail.com",
-                            nom = "Davis",
-                            prenom = "Owen",
-                            tel = "626.963.8857 x001"
+                            cin = "EE315928",
+                            email = "Troy_Howe@gmail.com",
+                            nom = "Howe",
+                            prenom = "Troy",
+                            tel = "1-319-432-2020"
                         },
                         new
                         {
                             id = 3,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE772121",
-                            email = "Geraldine.Corkery17@gmail.com",
-                            nom = "Corkery",
-                            prenom = "Geraldine",
-                            tel = "704.875.8925"
+                            cin = "EE382781",
+                            email = "Roxanne.Welch@hotmail.com",
+                            nom = "Welch",
+                            prenom = "Roxanne",
+                            tel = "692.839.1222"
                         },
                         new
                         {
                             id = 4,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE974492",
-                            email = "Blake60@gmail.com",
-                            nom = "Baumbach",
-                            prenom = "Blake",
-                            tel = "878-637-6505"
+                            cin = "EE451528",
+                            email = "Tyrone14@hotmail.com",
+                            nom = "Bahringer",
+                            prenom = "Tyrone",
+                            tel = "1-798-699-5942 x85156"
                         },
                         new
                         {
                             id = 5,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE254001",
-                            email = "Colin47@hotmail.com",
-                            nom = "Baumbach",
-                            prenom = "Colin",
-                            tel = "215.243.8707 x1048"
+                            cin = "EE444675",
+                            email = "Kenneth.Kub@hotmail.com",
+                            nom = "Kub",
+                            prenom = "Kenneth",
+                            tel = "798-217-0453 x25460"
                         },
                         new
                         {
                             id = 6,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE174914",
-                            email = "Mae.Dach59@yahoo.com",
-                            nom = "Dach",
-                            prenom = "Mae",
-                            tel = "1-617-495-3177"
+                            cin = "EE311356",
+                            email = "Shelley_Muller33@gmail.com",
+                            nom = "Muller",
+                            prenom = "Shelley",
+                            tel = "1-591-510-2932 x8751"
                         },
                         new
                         {
                             id = 7,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE939118",
-                            email = "Julian.Pouros@gmail.com",
-                            nom = "Pouros",
-                            prenom = "Julian",
-                            tel = "675.759.3271 x3574"
+                            cin = "EE52628",
+                            email = "Emma74@gmail.com",
+                            nom = "Dooley",
+                            prenom = "Emma",
+                            tel = "413.609.0609"
                         },
                         new
                         {
                             id = 8,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE859833",
-                            email = "Zachary_Wintheiser35@hotmail.com",
-                            nom = "Wintheiser",
-                            prenom = "Zachary",
-                            tel = "303-637-5532 x7676"
+                            cin = "EE47803",
+                            email = "Jackie.Jakubowski@gmail.com",
+                            nom = "Jakubowski",
+                            prenom = "Jackie",
+                            tel = "1-672-892-2035 x985"
                         },
                         new
                         {
                             id = 9,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE969188",
-                            email = "Ana.Kemmer93@gmail.com",
-                            nom = "Kemmer",
-                            prenom = "Ana",
-                            tel = "1-482-423-4818 x61007"
+                            cin = "EE815580",
+                            email = "Rene61@yahoo.com",
+                            nom = "Bins",
+                            prenom = "Rene",
+                            tel = "633-952-3346 x6017"
                         },
                         new
                         {
                             id = 10,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE789015",
-                            email = "Kari80@hotmail.com",
-                            nom = "Nader",
-                            prenom = "Kari",
-                            tel = "928.605.4762"
+                            cin = "EE52484",
+                            email = "Terence28@yahoo.com",
+                            nom = "Lynch",
+                            prenom = "Terence",
+                            tel = "1-297-663-7980"
                         },
                         new
                         {
                             id = 11,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE397633",
-                            email = "Raquel_Casper@gmail.com",
-                            nom = "Casper",
-                            prenom = "Raquel",
-                            tel = "(721) 903-5625 x66101"
+                            cin = "EE114855",
+                            email = "Krista72@yahoo.com",
+                            nom = "Bruen",
+                            prenom = "Krista",
+                            tel = "959-445-9453"
                         },
                         new
                         {
                             id = 12,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE499991",
-                            email = "Tasha_Sipes@yahoo.com",
-                            nom = "Sipes",
-                            prenom = "Tasha",
-                            tel = "(690) 825-3181 x82636"
+                            cin = "EE898851",
+                            email = "Lucas.Kovacek91@hotmail.com",
+                            nom = "Kovacek",
+                            prenom = "Lucas",
+                            tel = "613-934-8295 x41143"
                         },
                         new
                         {
                             id = 13,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE761665",
-                            email = "Eunice_Bednar34@gmail.com",
-                            nom = "Bednar",
-                            prenom = "Eunice",
-                            tel = "(562) 240-0313 x673"
+                            cin = "EE257235",
+                            email = "Melvin_Homenick7@gmail.com",
+                            nom = "Homenick",
+                            prenom = "Melvin",
+                            tel = "740.808.8061 x36418"
                         },
                         new
                         {
                             id = 14,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE261329",
-                            email = "Tomas47@gmail.com",
-                            nom = "Franecki",
-                            prenom = "Tomas",
-                            tel = "1-768-271-8560"
+                            cin = "EE983883",
+                            email = "Phillip96@hotmail.com",
+                            nom = "Marks",
+                            prenom = "Phillip",
+                            tel = "374-417-5964 x280"
                         },
                         new
                         {
                             id = 15,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE208017",
-                            email = "Lynda81@gmail.com",
-                            nom = "Botsford",
-                            prenom = "Lynda",
-                            tel = "(364) 786-0002"
+                            cin = "EE347967",
+                            email = "Darlene_Konopelski14@hotmail.com",
+                            nom = "Konopelski",
+                            prenom = "Darlene",
+                            tel = "773-856-7808 x4427"
                         },
                         new
                         {
                             id = 16,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE576798",
-                            email = "Deborah14@gmail.com",
-                            nom = "Auer",
-                            prenom = "Deborah",
-                            tel = "(645) 686-6875"
+                            cin = "EE13183",
+                            email = "Roy63@gmail.com",
+                            nom = "Parker",
+                            prenom = "Roy",
+                            tel = "1-868-394-8100"
                         },
                         new
                         {
                             id = 17,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE65235",
-                            email = "Crystal_Goodwin35@hotmail.com",
-                            nom = "Goodwin",
-                            prenom = "Crystal",
-                            tel = "482.798.6181 x95600"
+                            cin = "EE183659",
+                            email = "Kelli.OConner@gmail.com",
+                            nom = "O'Conner",
+                            prenom = "Kelli",
+                            tel = "681.909.4695 x001"
                         },
                         new
                         {
                             id = 18,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE958236",
-                            email = "Maxine_Morar@gmail.com",
-                            nom = "Morar",
-                            prenom = "Maxine",
-                            tel = "(307) 815-7865"
+                            cin = "EE108048",
+                            email = "Sabrina67@yahoo.com",
+                            nom = "Gerlach",
+                            prenom = "Sabrina",
+                            tel = "475.895.0797 x130"
                         },
                         new
                         {
                             id = 19,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE614681",
-                            email = "Horace_Deckow@gmail.com",
-                            nom = "Deckow",
-                            prenom = "Horace",
-                            tel = "810.454.4360 x9567"
+                            cin = "EE643092",
+                            email = "Ben83@hotmail.com",
+                            nom = "Cremin",
+                            prenom = "Ben",
+                            tel = "689.231.2312"
                         },
                         new
                         {
                             id = 20,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE296997",
-                            email = "Lee10@yahoo.com",
-                            nom = "Kemmer",
-                            prenom = "Lee",
-                            tel = "394.416.1053 x41285"
+                            cin = "EE171407",
+                            email = "Silvia.Kunze@hotmail.com",
+                            nom = "Kunze",
+                            prenom = "Silvia",
+                            tel = "(827) 406-7784 x422"
                         },
                         new
                         {
                             id = 21,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE689398",
-                            email = "William31@gmail.com",
-                            nom = "Pacocha",
-                            prenom = "William",
-                            tel = "333.265.2510"
+                            cin = "EE625741",
+                            email = "Roxanne_Kiehn@hotmail.com",
+                            nom = "Kiehn",
+                            prenom = "Roxanne",
+                            tel = "(248) 901-2008 x45370"
                         },
                         new
                         {
                             id = 22,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE355168",
-                            email = "Dave_Streich11@yahoo.com",
-                            nom = "Streich",
-                            prenom = "Dave",
-                            tel = "(317) 905-9691"
+                            cin = "EE180197",
+                            email = "Lawrence94@hotmail.com",
+                            nom = "Kuvalis",
+                            prenom = "Lawrence",
+                            tel = "505.405.3419 x8823"
                         },
                         new
                         {
                             id = 23,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE267342",
-                            email = "Marie.Baumbach15@gmail.com",
-                            nom = "Baumbach",
-                            prenom = "Marie",
-                            tel = "1-466-716-0981"
+                            cin = "EE458601",
+                            email = "Willie7@yahoo.com",
+                            nom = "Douglas",
+                            prenom = "Willie",
+                            tel = "906.949.5940"
                         },
                         new
                         {
                             id = 24,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE839643",
-                            email = "Chad_Weimann@gmail.com",
-                            nom = "Weimann",
-                            prenom = "Chad",
-                            tel = "(497) 750-3754 x714"
+                            cin = "EE956597",
+                            email = "Sherry.Pagac@yahoo.com",
+                            nom = "Pagac",
+                            prenom = "Sherry",
+                            tel = "755-251-8975"
                         },
                         new
                         {
                             id = 25,
                             address = "Bogus.Person+CardAddress",
-                            cin = "EE649313",
-                            email = "Todd.Reichert30@yahoo.com",
-                            nom = "Reichert",
-                            prenom = "Todd",
-                            tel = "822.432.1798"
+                            cin = "EE901454",
+                            email = "Heather.Leannon@hotmail.com",
+                            nom = "Leannon",
+                            prenom = "Heather",
+                            tel = "(604) 581-7525 x19466"
                         });
                 });
 
@@ -1608,21 +1713,6 @@ namespace GestionEtudiants.Migrations
                         });
                 });
 
-            modelBuilder.Entity("FiliereModule", b =>
-                {
-                    b.HasOne("GestionEtudiants.Models.Filiere", null)
-                        .WithMany()
-                        .HasForeignKey("filieresid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GestionEtudiants.Models.Module", null)
-                        .WithMany()
-                        .HasForeignKey("modulesid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("GestionEtudiants.Models.Absence", b =>
                 {
                     b.HasOne("GestionEtudiants.Models.Etudiant", "Etudiant")
@@ -1648,6 +1738,25 @@ namespace GestionEtudiants.Migrations
                         .HasForeignKey("id_inscription");
 
                     b.Navigation("Inscription");
+                });
+
+            modelBuilder.Entity("GestionEtudiants.Models.FiliereModule", b =>
+                {
+                    b.HasOne("GestionEtudiants.Models.Filiere", "Filiere")
+                        .WithMany("FiliereModules")
+                        .HasForeignKey("FiliereId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GestionEtudiants.Models.Module", "Module")
+                        .WithMany("FiliereModules")
+                        .HasForeignKey("ModuleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Filiere");
+
+                    b.Navigation("Module");
                 });
 
             modelBuilder.Entity("GestionEtudiants.Models.Inscription", b =>
@@ -1692,6 +1801,8 @@ namespace GestionEtudiants.Migrations
 
             modelBuilder.Entity("GestionEtudiants.Models.Filiere", b =>
                 {
+                    b.Navigation("FiliereModules");
+
                     b.Navigation("inscriptions");
                 });
 
@@ -1702,6 +1813,8 @@ namespace GestionEtudiants.Migrations
 
             modelBuilder.Entity("GestionEtudiants.Models.Module", b =>
                 {
+                    b.Navigation("FiliereModules");
+
                     b.Navigation("notes");
                 });
 

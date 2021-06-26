@@ -17,6 +17,7 @@ namespace GestionEtudiants.Models
         public List<Note> notes {get; set;}
         public List<Professeur> professeurs{get; set;}
         public List<Type> types {get; set;}
+        public List<FiliereModule> filiereModules { get; set; }
 
 
 
@@ -127,6 +128,17 @@ namespace GestionEtudiants.Models
                 .RuleFor(m => m.id_etudiant, f => f.PickRandom(etudiants).apogee);
 
             documents = docs.Generate(75);
+
+
+
+            ids = 1;
+            var fm = new Faker<FiliereModule>()
+                .RuleFor(m => m.Id, f => ids++)
+                .RuleFor(m => m.ModuleId, f => f.PickRandom(modules).id)
+                .RuleFor(m => m.FiliereId, f => f.PickRandom(filieres).id);
+
+
+            filiereModules = fm.Generate(16);
 
 
         }
